@@ -1,0 +1,25 @@
+[Desktop Entry]
+Type=Service
+ServiceTypes=KonqPopupMenu/Plugin
+MimeType=application/pdf;
+Icon=okular
+Actions=JPEG;PNG
+X-KDE-Priority=TopLevel
+X-KDE-StartupNotify=false
+X-KDE-Submenu=Convert PDF to
+X-KDE-Submenu[it]=Converti PDF in
+X-KDE-Submenu[fr]=Convertir le PDF en
+
+[Desktop Action JPEG]
+Name=JPEG image
+Name[it]=Immagine JPEG
+Name[fr]=Image JPEG
+Icon=image-jpg
+Exec=filename=%f; convert -density 150 %f -quality 100 ${filename%.*}.jpg
+
+[Desktop Action PNG]
+Name=PNG image
+Name[it]=Immagine PNG
+Name[fr]=Image PNG
+Icon=image-png
+Exec=filename=%f; convert -density 150 %f -quality 100 ${filename%.*}.png
