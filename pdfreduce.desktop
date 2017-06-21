@@ -1,0 +1,40 @@
+[Desktop Entry]
+Type=Service
+ServiceTypes=KonqPopupMenu/Plugin
+MimeType=application/pdf;
+Icon=okular
+Actions=default;screen;ebook;prepress;printer
+X-KDE-Priority=TopLevel
+X-KDE-StartupNotify=false
+X-KDE-Submenu=Compress PDF
+X-KDE-Submenu[fr]=Compresser le PDF
+
+[Desktop Action default]
+Name=Default setting
+Name[fr]=Confirguration par défaut
+Icon=okular
+Exec=filename=%f; gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/default -dNOPAUSE -dQUIET -dBATCH -sOutputFile=${filename%.*}.default.pdf %f
+
+[Desktop Action screen]
+Name=for screen
+Name[fr]=pour écran
+Icon=okular
+Exec=filename=%f; gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -sOutputFile=${filename%.*}.screen.pdf %f
+
+[Desktop Action ebook]
+Name=for ebook
+Name[fr]=pour ebook
+Icon=okular
+Exec=filename=%f; gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH -sOutputFile=${filename%.*}.ebook.pdf %f
+
+[Desktop Action prepress]
+Name=Prepress Optimized
+Name[fr]=Prepress Optimized
+Icon=okular
+Exec=filename=%f; gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/prepress -dNOPAUSE -dQUIET -dBATCH -sOutputFile=${filename%.*}.prepress.pdf %f
+
+[Desktop Action printer]
+Name=Print Optimized
+Name[fr]=Print Optimized
+Icon=okular
+Exec=filename=%f; gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/printer -dNOPAUSE -dQUIET -dBATCH -sOutputFile=${filename%.*}.printer.pdf %f
