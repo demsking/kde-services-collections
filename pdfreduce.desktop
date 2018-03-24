@@ -11,7 +11,7 @@ X-KDE-Submenu[fr]=Compresser le PDF
 
 [Desktop Action default]
 Name=Default setting
-Name[fr]=Confirguration par défaut
+Name[fr]=Configuration par défaut
 Icon=okular
 Exec=filename=%f; gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/default -dNOPAUSE -dQUIET -dBATCH -sOutputFile=${filename%.*}.default.pdf %f
 
